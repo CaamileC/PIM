@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="style.css">
+  <title>CarControl - Login</title>
+</head>
+<body>
+    <div class="login-container">
+        <div class="login-box">
+            <div class="logo">
+                <img src="logo.png" alt="Logo CarControl">
+            </div>
+            <div class="left">
+                <p class="welcome">Bem vindo!</p>
+                <p class="text">Faça o seu login e tenha acesso ao sistema de gestão da <span class="highlight">sua mecânica</span>.</p>
+            </div>
+            <div class="separator"></div>
+            <div class="right">
+            <h2>LOGIN</h2>
+            <form id="loginForm">
+                <input type="text" id="usuario" placeholder="Digite seu usuário">
+                <input type="password" id="senha" placeholder="Digite sua senha">
+                <button type="submit">ENTRAR</button>
+            </form>
+            </div>
+        </div>
+    </div>
+
+    <script>
+        document.getElementById("loginForm").addEventListener("submit", function(e) {
+        e.preventDefault();
+
+        const usuario = document.getElementById("usuario").value;
+        const senha = document.getElementById("senha").value;
+
+        if (usuario === "" || senha === "") {
+            alert("Por favor, preencha todos os campos!");
+            return;
+        }
+
+        alert("Bem-vindo, " + usuario + "!");
+        });
+    </script>
+</body>
+</html>

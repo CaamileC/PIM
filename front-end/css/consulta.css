@@ -1,0 +1,348 @@
+/* ===== RESET ===== */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: Arial, sans-serif;
+}
+
+/* ===== BODY ===== */
+body {
+  background: #f2f2f2;
+  color: #333;
+  height: 100vh;
+  overflow: hidden;
+}
+
+/* ===== TOPBAR ===== */
+.topbar {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 60px;
+  background: #9B9B9B;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 0 30px;
+  z-index: 1000;
+}
+
+/* ===== LOGO TOPO ===== */
+.topbar .logo {
+  display: flex;
+  align-items: center;
+}
+
+.topbar .logo img {
+  height: 32px;        /* CONTROLE DO TAMANHO */
+  width: auto;
+  object-fit: contain;
+}
+.topbar h2 {
+  font-size: 20px;
+  font-weight: bold;
+}
+
+/* AÇÕES TOPO */
+.top-actions {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+#themeToggle {
+  background: none;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+
+.user-name {
+  font-weight: bold;
+  color: #333;
+}
+
+/* ===== LAYOUT (SIDEBAR + CONTEÚDO) ===== */
+.layout {
+  display: flex;
+  margin-top: 60px; /* altura da topbar */
+  height: calc(100vh - 60px);
+}
+
+/* ===== SIDEBAR ===== */
+.sidebar {
+  width: 220px;
+  background: #f5f5f5; /* cinza claro correto */
+  padding: 15px 10px;
+  display: flex;
+  flex-direction: column;
+  transition: width 0.3s ease;
+  border-right: 1px solid #ddd;
+}
+
+/* BOTÃO MENU */
+.menu-btn {
+  font-size: 22px;
+  background: none;
+  border: none;
+  cursor: pointer;
+  margin-bottom: 20px;
+  align-self: flex-start;
+}
+
+/* NAV */
+.sidebar nav {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
+
+.sidebar nav a {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+  padding: 10px 12px;
+  border-radius: 8px;
+  color: #333;
+  text-decoration: none;
+  transition: background 0.3s, color 0.3s;
+}
+
+.sidebar nav a:hover {
+  background: #e0e0e0;
+}
+
+.sidebar nav a.active {
+  background: rgba(251, 107, 54, 0.15);
+  color: #fb6b36;
+  font-weight: bold;
+}
+
+/* ===== SIDEBAR FECHADA ===== */
+.sidebar.closed {
+  width: 60px;
+}
+
+.sidebar.closed nav a span {
+  display: none;
+}
+
+.sidebar.closed nav a {
+  justify-content: center;
+}
+
+/* ===== MODO ESCURO ===== */
+body.dark {
+  background: #121212;
+  color: #fff;
+}
+
+body.dark .topbar {
+  background: #1e1e1e;
+}
+
+body.dark .sidebar {
+  background: #1a1a1a;
+}
+
+body.dark .sidebar nav a {
+  color: #ccc;
+}
+
+body.dark .sidebar nav a:hover,
+body.dark .sidebar nav a.active {
+  background: rgba(251, 107, 54, 0.6);
+  color: #fff;
+}
+
+body.dark .content {
+  background: #181818;
+  color: #fff;
+}
+
+body.dark .user-name {
+  color: #fff;
+}
+
+/* Submenu */
+.menu-item {
+  width: 100%;
+}
+
+.submenu {
+  display: none;
+  flex-direction: column;
+  margin-left: 25px;
+}
+
+.submenu a {
+  font-size: 14px;
+  padding: 8px 0;
+  opacity: 0.9;
+}
+
+/* Quando submenu estiver aberto */
+.menu-item.open .submenu {
+  display: flex;
+}
+
+/* Quando sidebar estiver fechada, esconde submenu */
+.sidebar.closed .submenu {
+  display: none !important;
+}
+
+
+/* ===== CONTEÚDO ===== */
+.content {
+  flex: 1;
+  padding: 40px;
+  overflow-y: auto;
+  background: #fff;
+}
+
+/* TÍTULO */
+.content h1 {
+  text-align: center;
+  margin-bottom: 30px;
+}
+
+/* SEARCH BAR */
+.search-bar {
+  max-width: 900px;
+  margin: 0 auto 30px auto;
+  display: flex;
+  gap: 15px;
+}
+
+.search-bar input,
+.search-bar select {
+  flex: 1;
+  padding: 14px;
+  border-radius: 12px;
+  border: none;
+  background: #f3f3f3;
+}
+
+/* LISTA DE CLIENTES */
+#listaClientes {
+  max-width: 900px;
+  margin: 0 auto;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+/* CARD */
+.card-cliente {
+  background: #f5f5f5;
+  border-radius: 18px;
+  padding: 20px 25px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.card-cliente .info {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.card-cliente button {
+  background: #e7b39b;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 12px;
+  cursor: pointer;
+}
+
+body.dark .card-cliente {
+  background: #1f1f1f;
+}
+
+body.dark .card-cliente input {
+  background: #2a2a2a;
+  color: #fff;
+}
+
+body.dark .card-cliente input::placeholder {
+  color: #aaa;
+}
+
+/* ===== MODAL ===== */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0,0,0,0.6);
+  display: none;
+  align-items: center;
+  justify-content: center;
+  z-index: 2000;
+}
+
+.modal {
+  background: #fff;
+  padding: 30px;
+  border-radius: 18px;
+  width: 400px;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+.modal h2 {
+  margin-bottom: 10px;
+}
+
+.modal input {
+  padding: 12px;
+  border-radius: 10px;
+  border: none;
+  background: #f3f3f3;
+}
+
+.modal-actions {
+  display: flex;
+  justify-content: flex-end;
+  gap: 10px;
+  margin-top: 10px;
+}
+
+.btn-cancelar {
+  background: #ccc;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+.btn-salvar {
+  background: #fb6b36;
+  color: #fff;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 10px;
+  cursor: pointer;
+}
+
+/* Garante layout em coluna */
+.consulta-clientes {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Barra de pesquisa sempre em cima */
+.consulta-clientes .search-bar {
+  width: 100%;
+  margin-bottom: 30px;
+}
+
+/* Lista sempre abaixo */
+.consulta-clientes #listaClientes {
+  width: 100%;
+}

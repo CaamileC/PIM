@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>CarControl | Dashboard</title>
+  <link rel="stylesheet" href="css/cadastro.css">
+</head>
+<body>
+  <!-- TOPO -->
+  <header class="topbar">
+    <div class="logo">
+    <img src="img/logo.png" alt="CarControl">
+    </div>
+
+    <div class="top-right">
+      <span>Olá, Administrador</span>
+      <button id="themeToggle">🌙</button>
+    </div>
+  </header>
+
+  <!-- LAYOUT -->
+  <div class="layout">
+
+    <!-- MENU -->
+    <aside class="sidebar closed" id="sidebar">
+      <button id="menuToggle" class="menu-btn">☰</button>
+
+      <nav>
+        <a href="dashboard.html">🏠 <span>Início</span></a>
+
+        <div class="menu-item has-submenu">
+          <a id="cadastroToggle" class="active">📄 <span>Cadastro</span></a>
+
+          <div class="submenu">
+            <a href="cadastro.html"><span>Cliente</span></a>
+            <a href="cadastro-funcionario-login.html"><span>Funcionário</span></a>
+          </div>
+        </div>
+
+        <a href="consulta.clientes.html">🔍 <span>Consulta</span></a>
+        <a>🚗 <span>Veículos</span></a>
+      </nav>
+    </aside>
+
+  <div class="content">
+  <h1>CADASTRO DE CLIENTE</h1>
+    <form id="formCliente" class="form-card">
+      <div class="row">
+        <input type="text" name="nome" placeholder="Nome" required>
+        <input type="text" name="cpf" placeholder="CPF" required>
+      </div>
+
+      <div class="row">
+        <input type="email" name="email" placeholder="E-mail">
+      </div>
+
+      <div class="row">
+        <input type="text" name="telefone" placeholder="Telefone">
+        <input type="text" name="modelo_carro" placeholder="Modelo do Carro">
+        <input type="text" name="placa_carro" placeholder="Placa do Carro">
+      </div>
+
+      <button type="submit">CADASTRAR</button>
+    </form>
+  </div>
+
+  </div>
+
+  <script src="js/cadcliente.js"></script>
+</body>
+</html>

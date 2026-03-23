@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <title>CarControl | Dashboard</title>
+  <link rel="stylesheet" href="css/dashboard.css">
+</head>
+<body>
+  <!-- TOPO -->
+  <header class="topbar">
+    <div class="logo">
+    <img src="img/logo.png" alt="CarControl">
+    </div>
+
+    <div class="top-right">
+      <span>Olá, Administrador</span>
+      <button id="themeToggle">🌙</button>
+    </div>
+  </header>
+
+  <!-- LAYOUT -->
+  <div class="layout">
+
+    <!-- MENU -->
+    <aside class="sidebar closed" id="sidebar">
+      <button id="menuToggle" class="menu-btn">☰</button>
+
+      <nav>
+        <a class="active" href="dashboard.html">🏠 <span>Início</span></a>
+
+        <div class="menu-item has-submenu">
+          <a id="cadastroToggle">📄 <span>Cadastro</span></a>
+
+          <div class="submenu">
+            <a href="cadastro.html"><span>Cliente</span></a>
+            <a href="cadastro-funcionario-login.html"><span>Funcionário</span></a>
+          </div>
+        </div>
+
+        <a href="consulta.clientes.html">🔍 <span>Consulta</span></a>
+        <a>🚗 <span>Veículos</span></a>
+      </nav>
+    </aside>
+
+    <!-- CONTEÚDO -->
+    <main class="content">
+      <!-- seus cards aqui -->
+    </main>
+
+  </div>
+
+  <script src="js/dashboard.js"></script>
+</body>
+</html>

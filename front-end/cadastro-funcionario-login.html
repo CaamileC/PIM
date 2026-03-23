@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cadastro-funcionario.css">
+    <title>CarControl | Cadastro</title>
+</head>
+<body>
+    <!-- TOPO -->
+    <header class="topbar">
+        <div class="logo">
+            <img src="img/logo.png" alt="CarControl">
+        </div>
+
+        <div class="top-right">
+            <span>Olá, Administrador</span>
+            <button id="themeToggle">🌙</button>
+        </div>
+    </header>
+
+    <div class="layout">
+        <!-- MENU -->
+        <aside class="sidebar closed" id="sidebar">
+        <button id="menuToggle" class="menu-btn">☰</button>
+
+        <nav>
+            <a href="dashboard.html">🏠 <span>Início</span></a>
+
+            <div class="menu-item has-submenu">
+            <a id="cadastroToggle" class="active">📄 <span>Cadastro</span></a>
+
+            <div class="submenu">
+                <a href="cadastro.html"><span>Cliente</span></a>
+                <a href="cadastro-funcionario-login.html"><span>Funcionário</span></a>
+            </div>
+            </div>
+
+            <a href="consulta.clientes.html">🔍 <span>Consulta</span></a>
+            <a>🚗 <span>Veículos</span></a>
+        </nav>
+        </aside>
+
+        <!-- CONTEÚDO -->
+        <main class="content">
+            <h1>CADASTRO DE FUNCIONÁRIO</h1>
+
+            <div class="alert">
+            ⚠️ Página de acesso restrito
+            </div>
+
+            <form id="loginRestrito" class="form-card form-login">
+                <input type="text" name="nome" placeholder="Digite seu login" required>
+                <input type="password" name="senha" placeholder="Digite sua senha" required>
+                <button type="submit">ENTRAR</button>
+            </form>
+        </main>
+    </div>
+
+    <script src="js/auth-funcionario.js"></script>
+</body>
+</html>

@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="css/cadastro-funcionario.css">
+    <title>CarControl | Cadastro</title>
+</head>
+<body>
+    <!-- TOPO -->
+    <header class="topbar">
+        <div class="logo">
+            <img src="img/logo.png" alt="CarControl">
+        </div>
+
+        <div class="top-right">
+            <span>Olá, Administrador</span>
+            <button id="themeToggle">🌙</button>
+        </div>
+    </header>
+
+    <div class="layout">
+            <!-- MENU -->
+            <aside class="sidebar closed" id="sidebar">
+            <button id="menuToggle" class="menu-btn">☰</button>
+
+            <nav>
+                <a href="dashboard.html">🏠 <span>Início</span></a>
+
+                <div class="menu-item has-submenu">
+                <a id="cadastroToggle" class="active">📄 <span>Cadastro</span></a>
+
+                <div class="submenu">
+                    <a href="cadastro.html"><span>Cliente</span></a>
+                    <a href="cadastro-funcionario-login.html"><span>Funcionário</span></a>
+                </div>
+                </div>
+
+                <a href="consulta.clientes.html">🔍 <span>Consulta</span></a>
+                <a>🚗 <span>Veículos</span></a>
+            </nav>
+            </aside>
+
+        <script>
+            const usuario = JSON.parse(localStorage.getItem("usuario"));
+            if (!usuario || usuario.tipo !== "admin") {
+            alert("Acesso não autorizado");
+            window.location.href = "dashboard.html";
+            }
+        </script>
+
+        <!-- CONTEÚDO -->
+        <main class="content">
+            <h1>CADASTRO DE FUNCIONÁRIO</h1>
+                <form id="formFuncionario" class="form-card">
+                <input type="text" name="nome" placeholder="Nome" required>
+                <input type="email" name="email" placeholder="E-mail">
+
+                <div class="row">
+                    <input type="text" name="telefone" placeholder="Telefone">
+                    <input type="text" name="cpf" placeholder="CPF">
+                    <input type="text" name="funcao" placeholder="Função">
+                </div>
+                <button type="submit">CADASTRAR</button>
+            </form>
+        </main>
+    </div>
+
+    <script src="js/cadastro-funcionario.js"></script>
+</body>
+</html>

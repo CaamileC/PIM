@@ -1,0 +1,83 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="css/consulta.css">
+  <title>Carcontrol | Consulta</title>
+</head>
+<body>
+
+<header class="topbar">
+  <div class="logo">
+    <img src="img/logo.png" alt="CarControl">
+  </div>
+  <div class="top-right">
+    <span>Olá, Administrador</span>
+    <button id="themeToggle">🌙</button>
+  </div>
+</header>
+
+<div class="layout">
+
+  <aside class="sidebar closed" id="sidebar">
+    <button id="menuToggle" class="menu-btn">☰</button>
+    <nav>
+      <a href="dashboard.html">🏠 <span>Início</span></a>
+
+      <div class="menu-item has-submenu">
+        <a id="cadastroToggle">📄 <span>Cadastro</span></a>
+        <div class="submenu">
+          <a href="cadastro.html"><span>Cliente</span></a>
+          <a href="cadastro-funcionario-login.html"><span>Funcionário</span></a>
+        </div>
+      </div>
+
+      <a class="active" href="consulta.clientes.html">🔍 <span>Consulta</span></a>
+      <a>🚗 <span>Veículos</span></a>
+    </nav>
+  </aside>
+
+  <main class="content">
+
+    <h1>PESQUISA DE CLIENTE</h1>
+
+    <!-- PESQUISA -->
+    <div class="search-bar">
+      <input id="busca" placeholder="Pesquisa de clientes">
+      <select id="filtro">
+        <option value="nome">Nome</option>
+        <option value="cpf">CPF</option>
+        <option value="modelo_carro">Modelo do carro</option>
+      </select>
+    </div>
+
+    <!-- LISTA (SEPARADA!) -->
+    <div id="listaClientes"></div>
+
+  </main>
+</div>
+
+<!-- MODAL -->
+<div class="modal-overlay" id="modalEditar">
+  <div class="modal">
+    <h2>Editar cliente</h2>
+
+    <input type="hidden" id="editId">
+    <input type="text" id="editNome" placeholder="Nome">
+    <input type="text" id="editCpf" placeholder="CPF">
+    <input type="text" id="editTelefone" placeholder="Telefone">
+    <input type="text" id="editEmail" placeholder="E-mail">
+    <input type="text" id="editModelo" placeholder="Modelo do carro">
+    <input type="text" id="editPlaca" placeholder="Placa do carro">
+
+    <div class="modal-actions">
+      <button class="btn-cancelar" onclick="fecharModal()">Cancelar</button>
+      <button class="btn-salvar" onclick="salvarEdicao()">Salvar</button>
+    </div>
+  </div>
+</div>
+
+<script src="js/consulta-clientes.js"></script>
+</body>
+</html>
